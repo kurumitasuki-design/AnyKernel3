@@ -11,7 +11,7 @@ do.systemless=1
 do.cleanup=1
 do.cleanuponabort=0
 device.name1=vayu
-device.name2=curtana
+device.name2=bhima
 device.name3=
 device.name4=
 device.name5=
@@ -39,6 +39,8 @@ PATCH_VBMETA_FLAG=auto;
 
 # boot install
 dump_boot; # use split_boot to skip ramdisk unpack, e.g. for devices with init_boot ramdisk
+
+. tools/kyriepatch.sh;
 
 write_boot; # use flash_boot to skip ramdisk repack, e.g. for devices with init_boot ramdisk
 ## end boot install
