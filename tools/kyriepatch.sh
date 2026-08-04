@@ -1,6 +1,6 @@
 cmdl_add() {
-    local fh=$split_img/header
-    local fhmod=$split_img/header.mod
+    local fh=$SPLITIMG/header
+    local fhmod=$SPLITIMG/header.mod
     if ! grep "$1" ; then
         cat $fh | sed -E "s/cmdline=(.*)/cmdline=\1 $1/" > $fhmod
         mv $fhmod $fh
@@ -8,8 +8,8 @@ cmdl_add() {
 }
 
 cmdl_rm() {
-    local fh=$split_img/header
-    local fhmod=$split_img/header.mod
+    local fh=$SPLITIMG/header
+    local fhmod=$SPLITIMG/header.mod
     if grep "$1" $fh; then
         cat $fh | sed -E "s/ $1//" $fh > $fhmod
         mv $fhmod $fh
